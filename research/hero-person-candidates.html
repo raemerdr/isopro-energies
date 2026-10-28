@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero Person Candidates</title>
+<style>
+  :root { --bg:#f4f3ef; --ink:#172124; --muted:#5d6b6c; --line:#d8d6cf; --teal:#2e5e61; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui, -apple-system, sans-serif; }
+  header, main { max-width:1400px; margin:0 auto; padding:16px; }
+  h1 { font-size:22px; margin:8px 0 4px; }
+  header p { margin:0; color:var(--muted); max-width:70em; }
+  main { display:grid; grid-template-columns:repeat(auto-fill, minmax(420px, 1fr)); gap:16px; }
+  figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .crop { aspect-ratio:3.4 / 1; overflow:hidden; }
+  .crop img { width:100%; height:100%; object-fit:cover; object-position:50% 45%; filter:grayscale(1) contrast(1.05); display:block; }
+  .full { height:120px; background:#e6e4dd; }
+  .full img { height:100%; width:auto; display:block; margin:0 auto; }
+  figcaption { padding:8px 10px 10px; color:var(--muted); }
+  figcaption b { color:var(--teal); margin-right:4px; }
+  figcaption small { display:block; margin-top:2px; }
+  figure.pick { outline:3px solid var(--teal); outline-offset:-1px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Hero photo with a person</h1>
+  <p>Top strip: the photo as the start page shows it on a laptop (wide crop, black and white). Below it: the whole photo. H1–H4 are already downloaded; H5 onwards are new Magnific finds, all real photos.</p>
+</header>
+<main>
+<figure id="H1">
+  <div class="crop"><img src="../public/img/hero-cladding.jpg" alt=""></div>
+  <div class="full"><img src="../public/img/hero-cladding.jpg" alt=""></div>
+  <figcaption><b>H1</b> Steam piping insulation installation, power plant (crew at cladding)<small>already downloaded · 30824605</small></figcaption>
+</figure>
+<figure id="H2">
+  <div class="crop"><img src="../public/img/montage-kanal.jpg" alt=""></div>
+  <div class="full"><img src="../public/img/montage-kanal.jpg" alt=""></div>
+  <figcaption><b>H2</b> HVAC worker finishing air duct insulation<small>already downloaded · 181921117</small></figcaption>
+</figure>
+<figure id="H3">
+  <div class="crop"><img src="../public/img/aufmass.jpg" alt=""></div>
+  <div class="full"><img src="../public/img/aufmass.jpg" alt=""></div>
+  <figcaption><b>H3</b> Man in safety gear inspecting overhead pipes<small>already downloaded · 392800604</small></figcaption>
+</figure>
+<figure id="H4">
+  <div class="crop"><img src="../public/img/team-kontrolle.jpg" alt=""></div>
+  <div class="full"><img src="../public/img/team-kontrolle.jpg" alt=""></div>
+  <figcaption><b>H4</b> Worker inspecting pipes, refinery (used on Über uns banner)<small>already downloaded · 38735411</small></figcaption>
+</figure>
+<figure id="H5">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/oil-gas-worker-walking-through-maze-pipes-machinery-industrial-setting_661047-20200.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/oil-gas-worker-walking-through-maze-pipes-machinery-industrial-setting_661047-20200.jpg" alt=""></div>
+  <figcaption><b>H5</b> Oil and gas worker walking through a maze of pipes<small>new · Magnific 272686852</small></figcaption>
+</figure>
+<figure id="H6">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/industrial-worker-walking-through-modern-oil-refinery-plant_641010-90725.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/industrial-worker-walking-through-modern-oil-refinery-plant_641010-90725.jpg" alt=""></div>
+  <figcaption><b>H6</b> Industrial worker walking through a refinery<small>new · Magnific 428405227</small></figcaption>
+</figure>
+<figure id="H7">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/engineer-walking-through-industrial-oil-gas-refinery_641010-90668.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/engineer-walking-through-industrial-oil-gas-refinery_641010-90668.jpg" alt=""></div>
+  <figcaption><b>H7</b> Engineer walking through a refinery<small>new · Magnific 428077972</small></figcaption>
+</figure>
+<figure id="H8">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/three-workers-hard-hats-inspect-pipes-industrial-setting_1301918-1092.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/three-workers-hard-hats-inspect-pipes-industrial-setting_1301918-1092.jpg" alt=""></div>
+  <figcaption><b>H8</b> Three workers in hard hats inspect pipes<small>new · Magnific 274194305</small></figcaption>
+</figure>
+<figure id="H9">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/two-workers-walking-platform-industrial-setting_1301918-690.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/two-workers-walking-platform-industrial-setting_1301918-690.jpg" alt=""></div>
+  <figcaption><b>H9</b> Two workers walking on a platform<small>new · Magnific 270649947</small></figcaption>
+</figure>
+<figure id="H10">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/maintenance-technician-heating-plantpetrochemical-workers-supervise-operation-gas-oil-pipelines-factoryengineers-put-hearing-protector-room-with-many-pipes_44277-24069.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/maintenance-technician-heating-plantpetrochemical-workers-supervise-operation-gas-oil-pipelines-factoryengineers-put-hearing-protector-room-with-many-pipes_44277-24069.jpg" alt=""></div>
+  <figcaption><b>H10</b> Technician in a heating plant, room full of pipes<small>new · Magnific 39912894</small></figcaption>
+</figure>
+<figure id="H11">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/industrial-theme-warehouse-heating-cooling-system-installation-by-professional-caucasian-technician-commercial-building-ventilation-rectangle-canals-air-distribution_255667-45916.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/industrial-theme-warehouse-heating-cooling-system-installation-by-professional-caucasian-technician-commercial-building-ventilation-rectangle-canals-air-distribution_255667-45916.jpg" alt=""></div>
+  <figcaption><b>H11</b> Technician installing ventilation ducts in a warehouse<small>new · Magnific 42801795</small></figcaption>
+</figure>
+<figure id="H12">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/worker-installing-ventilation-ductwork-industrial-setting-daytime-construction-site_93675-360813.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/worker-installing-ventilation-ductwork-industrial-setting-daytime-construction-site_93675-360813.jpg" alt=""></div>
+  <figcaption><b>H12</b> Worker installing ventilation ductwork<small>new · Magnific 418149769</small></figcaption>
+</figure>
+<figure id="H13">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/skilled-worker-inspecting-air-ducts-commercial-building-daytime_93675-366939.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/skilled-worker-inspecting-air-ducts-commercial-building-daytime_93675-366939.jpg" alt=""></div>
+  <figcaption><b>H13</b> Worker inspecting air ducts<small>new · Magnific 418526819</small></figcaption>
+</figure>
+<figure id="H14">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/worker-installing-insulated-pipe-section-construction-trench_578399-22222.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/worker-installing-insulated-pipe-section-construction-trench_578399-22222.jpg" alt=""></div>
+  <figcaption><b>H14</b> Worker installing an insulated pipe section<small>new · Magnific 430820598</small></figcaption>
+</figure>
+<figure id="H15">
+  <div class="crop"><img src="https://img.magnific.com/free-photo/workman-wearing-hard-hat-working-with-metal-tube-factory_1303-26633.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/free-photo/workman-wearing-hard-hat-working-with-metal-tube-factory_1303-26633.jpg" alt=""></div>
+  <figcaption><b>H15</b> Workman in hard hat working with a metal tube<small>new · Magnific 13781632</small></figcaption>
+</figure>
+<figure id="H16">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/two-engineers-working-inside-oil-gas-refinery_179314-564.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/two-engineers-working-inside-oil-gas-refinery_179314-564.jpg" alt=""></div>
+  <figcaption><b>H16</b> Two engineers inside a refinery<small>new · Magnific 37371011</small></figcaption>
+</figure>
+<figure id="H17">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/maintenance-technician-geothermal-plant-rainy-overcast-day_1614772-549.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/maintenance-technician-geothermal-plant-rainy-overcast-day_1614772-549.jpg" alt=""></div>
+  <figcaption><b>H17</b> Technician at a geothermal plant<small>new · Magnific 433181735</small></figcaption>
+</figure>
+<figure id="H18">
+  <div class="crop"><img src="https://img.magnific.com/premium-photo/refinery-blue-collar-worker-standing-by-lpg-pipeline-checking-gas-production-distribution_308072-3820.jpg" alt=""></div>
+  <div class="full"><img src="https://img.magnific.com/premium-photo/refinery-blue-collar-worker-standing-by-lpg-pipeline-checking-gas-production-distribution_308072-3820.jpg" alt=""></div>
+  <figcaption><b>H18</b> Worker checking a pipeline<small>new · Magnific 38736030</small></figcaption>
+</figure>
+</main>
+</body>
+</html>

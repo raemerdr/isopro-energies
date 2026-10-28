@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IsoPro Stock Candidates</title>
+<style>
+  :root { --bg:#f4f3ef; --ink:#1d2526; --muted:#5d6b6c; --line:#d8d6cf; --teal:#2e5e61; --prem:#8a5a12; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui, -apple-system, sans-serif; }
+  header { padding:24px 16px 8px; max-width:1400px; margin:0 auto; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  header p { margin:0; color:var(--muted); }
+  section { max-width:1400px; margin:0 auto; padding:16px; }
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.06em; color:var(--teal); margin:8px 0 12px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px; }
+  figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+  .img { position:relative; aspect-ratio:3/2; background:#e6e4dd; }
+  .img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .num { position:absolute; top:8px; left:8px; background:var(--ink); color:#fff; font-weight:700; font-size:13px; padding:2px 8px; border-radius:4px; }
+  .cost { position:absolute; top:8px; right:8px; font-size:11px; font-weight:600; padding:2px 6px; border-radius:4px; background:#fff; color:var(--teal); }
+  .cost.p { color:var(--prem); }
+  figcaption { padding:8px 10px 10px; font-size:12.5px; color:var(--muted); }
+  figcaption b { display:block; color:var(--teal); font-size:12px; margin-bottom:2px; }
+  figure.pick { outline:3px solid var(--teal); outline-offset:-1px; }
+  figure.skip { opacity:.35; }
+  .sum { margin-top:8px !important; color:var(--ink) !important; max-width:900px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>IsoPro: Magnific stock candidates</h1>
+  <p>Real photos only (AI-generated excluded). Badge shows the credit cost to download: free 40, premium 150.</p>
+  <p class="sum"><b>Recommended set: 20 photos, outlined in teal, about 2,670 credits.</b> The faded ones are near-duplicates, residential-looking or off-trade (welding, food silos). There's no usable stock for Brandschutz: use the client's own fire-stop photos (07, 08, 14, 18, 21).</p>
+</header>
+<main id="root"></main>
+<script>
+const P = 150, F = 40;
+const groups = [
+  ["Hero & Wärme: insulation work and finished cladding", [
+    [30824605,"Steam piping insulation installation, power plant","https://img.magnific.com/premium-photo/steam-piping-insulation-installation-power-plant-steam-turbine-biomass-power-plant_484521-3148.jpg",P],
+    [30824595,"Steam piping insulation work, power plant","https://img.magnific.com/premium-photo/steam-piping-insulation-work-power-plant-steam-turbine-biomass-power-plant_484521-3143.jpg",P],
+    [16687489,"Steam pipe insulation installation","https://img.magnific.com/premium-photo/steam-pipe-insulation-installation-power-plant-steam-turbine_484521-32.jpg",P],
+    [16687386,"Steam pipe insulation, power plant","https://img.magnific.com/premium-photo/steam-pipe-insulation-power-plant-steam-turbine_484521-13.jpg",P],
+    [17383013,"Steam piping insulation, biomass plant","https://img.magnific.com/premium-photo/steam-piping-insulation-power-plant-steam-turbine-biomass-power-plant_484521-355.jpg",P],
+    [16614392,"Steam pipe insulation, power plant","https://img.magnific.com/premium-photo/steam-pipe-insulation-power-plant-steam-turbine_484521-2.jpg",P],
+    [16614418,"Steam pipe insulation, power plant","https://img.magnific.com/premium-photo/steam-pipe-insulation-power-plant-steam-turbine_484521-4.jpg",P],
+    [16614512,"Control valve, steam pipe insulation","https://img.magnific.com/premium-photo/control-valve-steam-pipe-insulation-power-plant-steam-turbine_484521-11.jpg",P],
+    [16614498,"Control valve, steam pipe insulation","https://img.magnific.com/premium-photo/control-valve-steam-pipe-insulation-power-plant-steam-turbine_484521-10.jpg",P],
+    [36660799,"Column in mineral wool + galvanised cladding","https://img.magnific.com/premium-photo/large-iron-heat-exchanger-tank-reactor-distillation-column-thermal-insulation-fiberglass-mineral-wool-galvanized-steel-industrial-refinery-petrochemical-plant-shop_75563-103.jpg",P],
+    [37685703,"Heat exchanger / reactor in thermal insulation","https://img.magnific.com/premium-photo/large-iron-heat-exchanger-tank-reactor-distillation-column-thermal-insulation-fiberglass_75563-2269.jpg",P],
+    [21131352,"Heat exchanger insulation, process area","https://img.magnific.com/premium-photo/heat-exchanger-insulation-process-area-pipeline-flowing-shiny-stainless-chemical-factory_478515-4628.jpg",P],
+    [392798837,"Valves on insulated metal pipes","https://img.magnific.com/premium-photo/valve-controls-insulated-metal-pipes-industrial-setting-bright-lighting_1426-25958.jpg",P],
+    [37685823,"Pipes and valves at a power plant","https://img.magnific.com/premium-photo/different-size-shaped-pipes-valves-power-plant_75563-2355.jpg",P],
+  ]],
+  ["Wide industrial: hero background, section breaks", [
+    [28694673,"Industrial pipelines on a sunny day","https://img.magnific.com/free-photo/closeup-industrial-pipelines-around-factor-sunny-day_181624-58546.jpg",F],
+    [1175789,"Silver pipeline system, refinery","https://img.magnific.com/free-photo/silver-pipeline-system-crude-oil-factory_1127-2937.jpg",F],
+    [100836837,"Silver pipeline against blue sky","https://img.magnific.com/premium-photo/low-angle-view-silver-pipeline-against-clear-blue-sky_1636100-625.jpg",P],
+    [23681725,"Cooling pipelines, gas plant, sky","https://img.magnific.com/premium-photo/technological-pipelines-cooling-equipment-gas-processing-plant-against-sky_577967-112.jpg",P],
+    [1119693,"Steel pipelines and cables in a plant","https://img.magnific.com/free-photo/steel-pipelines-cables-plant_1359-130.jpg",F],
+    [26151434,"Steel pipelines, factory interior","https://img.magnific.com/free-photo/steel-pipelines-cables-factory-interior-as-nuclear-industry-background-concept_645730-823.jpg",F],
+  ]],
+  ["Tanks & Behälter", [
+    [16049460,"Tank dome with cladding insulation","https://img.magnific.com/premium-photo/chemical-industry-with-fuel-storage-tank-dome-cladding-insulation_478515-137.jpg",P],
+    [16049474,"Tank dome with cladding insulation","https://img.magnific.com/premium-photo/chemical-industry-with-fuel-storage-tank-dome-cladding-insulation_478515-138.jpg",P],
+    [19312402,"Insulated tank, storm sky","https://img.magnific.com/premium-photo/chemical-industry-tank-storage-farm-insulation-tank-cloud-storm_478515-3956.jpg",P],
+    [19550639,"Insulated tank, cloud sky","https://img.magnific.com/premium-photo/chemical-industry-tank-storage-farm-insulation-tank-cloud-sky_478515-4074.jpg",P],
+    [409412452,"Storage tank with metal pipes","https://img.magnific.com/premium-photo/industrial-storage-tank-with-metallic-pipes-against-clear-blue-sky_389554-1909.jpg",P],
+  ]],
+  ["Kälte & TGA / Haustechnik", [
+    [1192572,"Central AC cooling machine, pipes and valve","https://img.magnific.com/free-photo/large-central-air-conditioning-cooling-machine-tube-valve_1387-549.jpg",F],
+    [22271164,"Pipes in red insulation, construction site","https://img.magnific.com/premium-photo/pipes-red-isolation-construction-site-instalation-plumbering_588493-214.jpg",P],
+    [22271151,"Insulated pipes fixed with mounting foam","https://img.magnific.com/premium-photo/pipes-isolation-are-fixed-by-mounting-foam-instalation-plumbering_588493-211.jpg",P],
+    [63266206,"Heating pipes with foil-faced insulation","https://img.magnific.com/premium-photo/insulation-heating-pipes-with-layer-material-foil-modern-pipeline-hot-water_267895-6371.jpg",P],
+    [433734402,"Valve on manifold, insulated pipes","https://img.magnific.com/premium-photo/hand-adjusting-red-valve-water-manifold-assembly-heating-system-with-pipes-insulation_244366-2248.jpg",P],
+    [159221008,"Plant room heating system","https://img.magnific.com/free-photo/modern-autonomous-heating-system-boiler-room_169016-51318.jpg",F],
+  ]],
+  ["Lüftung & Kanäle", [
+    [181921117,"HVAC worker finishing duct insulation","https://img.magnific.com/premium-photo/hvac-worker-finishing-air-duct-insulation_1426-24788.jpg",P],
+    [26308887,"Ducts in silver insulation, factory ceiling","https://img.magnific.com/premium-photo/ventilation-pipes-silver-insulation-material-hanging-from-ceiling-inside-new-building-modern-industrial-factory_116317-14368.jpg",P],
+    [208203716,"Silver ducts hanging from ceiling","https://img.magnific.com/premium-photo/silver-ventilation-pipes-hanging-from-ceiling-inside-building_93675-169335.jpg",P],
+    [1192571,"Ventilation duct on building roof","https://img.magnific.com/free-photo/ventilation-duct-building-roof_1387-548.jpg",F],
+    [1192570,"Ventilation duct on building roof","https://img.magnific.com/free-photo/ventilation-duct-building-roof_1387-547.jpg",F],
+    [416029327,"Heat-recovery ducts, ceiling under construction","https://img.magnific.com/premium-photo/heat-recovery-ventilation-system-ceiling-construction_664057-7112.jpg",P],
+    [418149769,"Worker installing ductwork, industrial","https://img.magnific.com/premium-photo/worker-installing-ventilation-ductwork-industrial-setting-daytime-construction-site_93675-360813.jpg",P],
+  ]],
+  ["People: crew, Karriere, Ablauf", [
+    [11451348,"Welder on a pipeline","https://img.magnific.com/free-photo/professional-welder-welding-pipe-pipeline-construction_342744-1573.jpg",F],
+    [13781632,"Worker in hard hat with metal tube","https://img.magnific.com/free-photo/workman-wearing-hard-hat-working-with-metal-tube-factory_1303-26633.jpg",F],
+    [38735411,"Worker inspecting pipes, refinery","https://img.magnific.com/premium-photo/professional-factory-worker-safety-work-wear-hardhat-doing-pipes-inspection-refinery_308072-3770.jpg",P],
+    [392800604,"Inspecting overhead pipes on site","https://img.magnific.com/premium-photo/man-safety-gear-inspecting-overhead-pipes-construction-site-day_1426-25972.jpg",P],
+    [428390338,"Worker inspecting industrial pipes","https://img.magnific.com/premium-photo/construction-worker-inspecting-industrial-pipes-facility_1408623-2654.jpg",P],
+    [11036839,"Inspection walk between tanks","https://img.magnific.com/free-photo/factory-worker-walking-metal-platform-doing-visual-inspection-industrial-food-storage-tanks-silos_342744-444.jpg",F],
+    [11036847,"Engineer portrait between tanks","https://img.magnific.com/free-photo/portrait-factory-engineer-worker-standing-metal-platform-industrial-storage-tanks-looking-camera_342744-445.jpg",F],
+  ]],
+];
+// Recommended set: number → where it goes on the site
+const picks = {
+  1:"Hero: crew cladding over mineral wool", 2:"Wärme card / 'Schicht für Schicht' backdrop", 4:"Wärme page: Rohrisolierung",
+  6:"Detail: end cap shows the layers", 8:"Armaturen: valve boxes, finished job", 12:"Wärme page: Wärmetauscher",
+  16:"Section break / 'Wo wir arbeiten'", 17:"Alternate hero / section break",
+  10:"Behälter: column with marking bands", 11:"Behälterisolierung", 23:"Tanks",
+  13:"Kälte card", 26:"Kälte page: chiller pipework",
+  33:"Lüftung: industrial ceiling ducts", 34:"Lüftung / Klima card", 35:"Lüftung: rooftop ducts",
+  32:"Karriere / Ablauf: Montage", 41:"Karriere / Ablauf", 42:"Ablauf: Begehung & Aufmaß", 43:"Karriere hero",
+};
+const skips = new Set([5,9,14,19,20,21,22,25,27,28,29,30,31,37,39,40,44,45]);
+let n = 0;
+const root = document.getElementById("root");
+for (const [name, items] of groups) {
+  const s = document.createElement("section");
+  s.innerHTML = `<h2>${name}</h2>`;
+  const g = document.createElement("div"); g.className = "grid";
+  for (const [id, title, src, cost] of items) {
+    n++;
+    const f = document.createElement("figure");
+    f.dataset.id = id;
+    if (picks[n]) f.className = "pick"; else if (skips.has(n)) f.className = "skip";
+    f.innerHTML = `<div class="img"><img src="${src}" alt="${title}"><span class="num">${n}</span><span class="cost ${cost===P?"p":""}">${cost===P?"Premium 150":"Free 40"}</span></div><figcaption>${picks[n] ? `<b>${picks[n]}</b>` : ""}${title}</figcaption>`;
+    g.appendChild(f);
+  }
+  s.appendChild(g); root.appendChild(s);
+}
+</script>
+</body>
+</html>
