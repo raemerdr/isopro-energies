@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Lexend } from 'next/font/google';
+import { CookieBanner } from '@/components/cookie-banner';
 import { DevBar } from '@/components/dev-bar';
 import { I18nProvider } from '@/components/i18n';
 import { JsonLd } from '@/components/json-ld';
@@ -91,6 +92,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
           <Motion />
           <ScrollFx />
           <SmoothScroll />
+          <CookieBanner />
           {process.env.NODE_ENV === 'development' && <DevBar />}
         </I18nProvider>
       </body>

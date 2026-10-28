@@ -479,6 +479,7 @@ export const de = {
     subcontractors: 'Nachunternehmer',
     imprint: 'Impressum',
     privacy: 'Datenschutz',
+    cookies: 'Cookie-Einstellungen',
     lead: 'Sie haben eine Frage zu Ihrer Anlage? Schreiben Sie uns, wir antworten persönlich.',
     write: 'Anfrage stellen',
     rights: '© {year} {name}. Alle Rechte vorbehalten.',
@@ -600,5 +601,14 @@ export const de = {
     },
 
     dev: { label: 'Sprache der Vorschau' },
+
+    /** The cookie notice (components/cookie-banner.tsx). The site sets no optional cookies, so it says so. */
+    consent: {
+      title: 'Cookies und Datenschutz',
+      text: 'Wir verwenden nur technisch notwendigen Speicher, damit die Website funktioniert. Optionale Dienste wie eine Statistik setzen wir nur mit Ihrer Zustimmung ein.',
+      privacy: 'Mehr in der Datenschutzerklärung',
+      necessary: 'Nur notwendige',
+      accept: 'Alle akzeptieren',
+    },
   },
 };

@@ -4,7 +4,7 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = { title: 'Datenschutzerklärung', alternates: { canonical: '/datenschutz' }, robots: { index: false } };
 
 /* DRAFT. This describes what the new site actually does: the inquiry form goes out by email through
-   Resend, fonts are self-hosted, there is no map embed, no cookies and no analytics. The old Wix policy
+   Resend, fonts are self-hosted, there is no map embed, no cookies and no analytics; the cookie notice keeps the visitor's choice in localStorage (section 6). The old Wix policy
    (it even mentions a "Mobile-App") no longer fits. Before launch: name the hosting provider and have
    the text generated or checked (eRecht24 or a lawyer). */
 export default function PrivacyPage() {
@@ -40,6 +40,7 @@ export default function PrivacyPage() {
 
         <h2>6. Schriftarten, Cookies und Analyse</h2>
         <p>Die verwendeten Schriftarten sind lokal eingebunden; eine Verbindung zu Servern von Google findet dabei nicht statt. Diese Website setzt keine Cookies und verwendet keine Analyse- oder Tracking-Tools.</p>
+        <p>Ihre Auswahl im Cookie-Hinweis („Nur notwendige“ oder „Alle akzeptieren“) speichern wir mit dem Zeitpunkt der Auswahl im lokalen Speicher Ihres Browsers (localStorage), damit der Hinweis nicht bei jedem Besuch erneut erscheint. Diese Speicherung ist technisch erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG); die Angaben verlassen Ihr Gerät nicht. Ihre Auswahl können Sie jederzeit über „Cookie-Einstellungen“ in der Fußzeile ändern.</p>
 
         <h2>7. Ihre Rechte</h2>
         <p>Sie haben das Recht auf Auskunft über Ihre bei uns gespeicherten Daten, auf Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit sowie das Recht, einer Verarbeitung zu widersprechen und eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft zu widerrufen. Außerdem steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu.</p>

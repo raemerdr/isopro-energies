@@ -2,6 +2,7 @@
    left (where the reference has its newsletter field) and three link columns on the right whose labels
    roll letter by letter on hover. */
 import { Logo } from '@/components/brand';
+import { CookieSettingsLink } from '@/components/cookie-banner';
 import { Button, Link, Roll } from '@/components/cta';
 import { fill } from '@/lib/i18n';
 import { getCopy } from '@/lib/i18n/server';
@@ -39,7 +40,11 @@ export async function SiteFooter() {
             {columns.map(({ title, links }) => (
               <div key={title}>
                 <h2 className="footer__title">{title}</h2>
-                <ul>{links.map(([href, label]) => <li key={href}><Link href={href} className="footer__link"><Roll by="chars">{label}</Roll></Link></li>)}</ul>
+                <ul>
+                  {links.map(([href, label]) => <li key={href}><Link href={href} className="footer__link"><Roll by="chars">{label}</Roll></Link></li>)}
+                  {/* The last column also opens the cookie notice again */}
+                  {title === footer.info && <li><CookieSettingsLink className="footer__link"><Roll by="chars">{footer.cookies}</Roll></CookieSettingsLink></li>}
+                </ul>
               </div>
             ))}
           </div>

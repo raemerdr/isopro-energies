@@ -1,5 +1,6 @@
 'use client';
-/* The loading screen: the logo's dot ring, on its own, turning while the page loads. It is part of the
+/* The loading screen: the logo's dot ring, closed into a full ring (alone, the C read as broken), turning
+   while the page loads. It is part of the
    server HTML, so it covers the page from the first paint; once everything has loaded (and at least
    `MIN_MS` after navigation started, so it never just flickers) it fades out and the page's own
    animations begin. It shows on full page loads only, not when moving between pages.
@@ -40,7 +41,7 @@ export function Loader() {
   if (stage === 'off') return null;
   return (
     <div className={cx('loader', stage === 'leaving' && 'is-leaving')} aria-hidden="true">
-      <DotRing className="loader__ring" />
+      <DotRing className="loader__ring" full />
     </div>
   );
 }

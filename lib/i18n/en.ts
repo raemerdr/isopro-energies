@@ -435,6 +435,7 @@ export const en: Copy = {
     subcontractors: 'Subcontractors',
     imprint: 'Imprint',
     privacy: 'Privacy',
+    cookies: 'Cookie settings',
     lead: 'Have a question about your plant? Write to us, we answer personally.',
     write: 'Send an inquiry',
     rights: '© {year} {name}. All rights reserved.',
@@ -553,5 +554,13 @@ export const en: Copy = {
     },
 
     dev: { label: 'Preview language' },
+
+    consent: {
+      title: 'Cookies and privacy',
+      text: 'We only use storage that is technically necessary for the site to work. Optional services such as analytics are only used with your consent.',
+      privacy: 'More in the privacy policy',
+      necessary: 'Necessary only',
+      accept: 'Accept all',
+    },
   },
 };
